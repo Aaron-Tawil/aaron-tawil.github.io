@@ -1,41 +1,17 @@
 # 💻 Skills
 
-## General Tech Stacks
-- Architecture Design
-- Desktop App Development
-- Web Development (Frontend & Backend)
-
-## LLM and AI Skills
-- Large Language Models (LLMs)
-- Retrieval-Augmented Generation (RAG)
-- GraphRAG
-- Knowledge Graphs
-- Chatbot Development
-- Agentic RAG
-- Fine-tuning LLMs
-
-## Programming languages
-- C# .NET
+## Programming Languages
 - Python
-- JavaScript/TypeScript
-  - React.js
-- T-SQL
-- Go
-- C++
 - Java
-- VB.NET/VBA
+- Kotlin
+- C
 
-## Databases
-- MSSQL
-- PostgreSQL
-- MySQL
-- SQLite
-
-## Cloud
-- Azure
-- GCP
-- Heroku
-- Render
-
-## Version Control Systems (VCS)
+## Tools & Env
 - Git
+- SQL
+- Linux
+- Docker
+- GenAi tools (Gemini CLI, codex, MCPs etc)
+
+## Soft Skills
+- Self-driven learner with excellent adaptability, meticulous attention to detail, strong problem-solving capabilities, and highly motivated to achieve and excel.
