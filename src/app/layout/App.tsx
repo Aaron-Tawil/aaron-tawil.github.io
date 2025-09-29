@@ -197,12 +197,20 @@ export default function App() {
                     <Route
                       key={index}
                       path={route}
-                      element={<MDContainer path={`./pages/${name}`} />}
+                      element={
+                        <MDContainer
+                          path={`${process.env.PUBLIC_URL ?? ''}/pages/${name}`}
+                        />
+                      }
                     />
                   ))}
                   <Route
                     path="/docs"
-                    element={<MDContainer path={`./pages/docs.md`} />}
+                    element={
+                      <MDContainer
+                        path={`${process.env.PUBLIC_URL ?? ''}/pages/docs.md`}
+                      />
+                    }
                   />
                   <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
