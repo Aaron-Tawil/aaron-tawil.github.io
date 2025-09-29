@@ -7,10 +7,11 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../../static/favicon.png";
 import { useLocation } from "react-router-dom";
 import { links } from "./links";
+import { taglines } from "./taglines";
 
 interface Props {
   setSelectedIndex: React.Dispatch<React.SetStateAction<number>>;
@@ -18,6 +19,9 @@ interface Props {
 
 export default function Home({ setSelectedIndex }: Props) {
   const { pathname } = useLocation();
+  const [taglineIndex, setTaglineIndex] = useState<number>(() =>
+    Math.floor(Math.random() * Math.max(taglines.length, 1))
+  );
   useEffect(() => {
     setSelectedIndex(-1);
   }, [setSelectedIndex]);
@@ -25,6 +29,14 @@ export default function Home({ setSelectedIndex }: Props) {
   useEffect(() => {
     document.title = process.env.REACT_APP_NAME!;
   }, [pathname]);
+
+  useEffect(() => {
+    if (taglines.length <= 1) return;
+    const id = window.setInterval(() => {
+      setTaglineIndex((i) => (i + 1) % taglines.length);
+    }, 4000);
+    return () => window.clearInterval(id);
+  }, []);
 
   return (
     <Grid
@@ -52,7 +64,7 @@ export default function Home({ setSelectedIndex }: Props) {
               justifyContent={{ xs: "center", sm: "flex-start" }}
             >
               <Typography variant="subtitle1" gutterBottom>
-                Always difficult, always beautiful
+                {taglines[taglineIndex] || ""}
               </Typography>
             </Grid>
             <Grid
