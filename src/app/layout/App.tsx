@@ -146,8 +146,7 @@ export default function App() {
                 <Stack sx={{ mt: 1 }}>
                   <Typography
                     variant="caption"
-                    color="text.secondary"
-                    sx={{ ml: 4 }}
+                    sx={{ ml: 4, color: darkMode ? "#bdc3cf" : "#69665f" }}
                   >
                     EXPLORER
                   </Typography>
