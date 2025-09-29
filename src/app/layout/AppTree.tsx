@@ -78,7 +78,7 @@ export default function AppTree({
       <TreeItem
         nodeId="-1"
         label="Home"
-        color="#bdc3cf"
+        sx={{ color: theme.palette.mode === "dark" ? "#bdc3cf" : "#69665f" }}
         onClick={() => {
           navigate("/");
           setSelectedIndex(-1);
