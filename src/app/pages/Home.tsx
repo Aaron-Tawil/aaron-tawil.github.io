@@ -76,6 +76,7 @@ export default function Home({ setSelectedIndex }: Props) {
                   <Tooltip key={link.index} title={link.title} arrow>
                     <Link
                       target="_blank"
+                      rel="noopener noreferrer"
                       href={link.href}
                       underline="none"
                       color="inherit"

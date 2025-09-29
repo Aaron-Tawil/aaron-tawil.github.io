@@ -57,7 +57,12 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 function MarkdownLink(props: any) {
   return (
-    <Link href={props.href} target="_blank" underline="hover">
+    <Link
+      href={props.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      underline="hover"
+    >
       {props.children}
     </Link>
   );
