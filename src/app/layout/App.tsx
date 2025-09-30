@@ -7,9 +7,11 @@ import {
   Stack,
   ThemeProvider,
   Typography,
+  Box,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import AppTree from "./AppTree";
+import ErrorBoundary from "./ErrorBoundary";
 import Footer from "./Footer";
 import Sidebar from "./Sidebar";
 import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
@@ -150,15 +152,28 @@ export default function App() {
                   >
                     EXPLORER
                   </Typography>
-                  <AppTree
-                    pages={pages.filter((x) => x.visible)}
-                    selectedIndex={selectedIndex}
-                    setSelectedIndex={setSelectedIndex}
-                    currentComponent={currentComponent}
-                    setCurrentComponent={setCurrentComponent}
-                    visiblePageIndexs={visiblePageIndexs}
-                    setVisiblePageIndexs={setVisiblePageIndexs}
-                  />
+                  <Box
+                    sx={{
+                      '& .MuiTreeItem-label': {
+                        color: darkMode ? '#bdc3cf' : '#69665f',
+                      },
+                      '& .MuiTreeItem-content.Mui-selected .MuiTreeItem-label': {
+                        color: darkMode ? '#ffffff' : '#e2ffff',
+                      },
+                    }}
+                  >
+                    <ErrorBoundary>
+                      <AppTree
+                        pages={pages.filter((x) => x.visible)}
+                        selectedIndex={selectedIndex}
+                        setSelectedIndex={setSelectedIndex}
+                        currentComponent={currentComponent}
+                        setCurrentComponent={setCurrentComponent}
+                        visiblePageIndexs={visiblePageIndexs}
+                        setVisiblePageIndexs={setVisiblePageIndexs}
+                      />
+                    </ErrorBoundary>
+                  </Box>
                 </Stack>
               </Grid>
             )}

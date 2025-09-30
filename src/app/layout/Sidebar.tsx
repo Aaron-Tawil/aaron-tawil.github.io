@@ -4,6 +4,7 @@ import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import { VscFiles, VscSettingsGear } from "react-icons/vsc";
 import { BiGitBranch } from "react-icons/bi";
+import PictureAsPdfOutlinedIcon from "@mui/icons-material/PictureAsPdfOutlined";
 import Divider from "@mui/material/Divider";
 import { links } from "../pages/links";
 import { useNavigate } from "react-router-dom";
@@ -24,6 +25,7 @@ export default function Sidebar({
   setSelectedIndex,
 }: Props) {
   const navigate = useNavigate();
+  const cvUrl = `${process.env.PUBLIC_URL || ''}/cv/Aaron-Tawil-CV.pdf`;
   return (
     <Box
       sx={{
@@ -96,6 +98,35 @@ export default function Sidebar({
             >
               <Box mt={0.7}>
                 <BiGitBranch />
+              </Box>
+            </Box>
+          </Link>
+        </Tooltip>
+
+        <Tooltip title="Download CV (PDF) — opens in new tab" arrow placement="right">
+          <Link
+            href={cvUrl}
+            underline="none"
+            color="inherit"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ WebkitTapHighlightColor: "rgba(0,0,0,0)" }}
+          >
+            <Box
+              sx={{
+                flexGrow: 0,
+                cursor: "pointer",
+                color: "#858585",
+                fontSize: 24,
+                "&:hover": {
+                  color: "white",
+                },
+              }}
+              display="flex"
+              justifyContent="center"
+            >
+              <Box mt={0.7}>
+                <PictureAsPdfOutlinedIcon />
               </Box>
             </Box>
           </Link>

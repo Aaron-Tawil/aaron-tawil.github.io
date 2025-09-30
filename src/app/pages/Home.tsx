@@ -6,12 +6,14 @@ import {
   Stack,
   Tooltip,
   Typography,
+  Button,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import logo from "../../static/favicon.png";
+import logo from "../../static/favicon3.png";
 import { useLocation } from "react-router-dom";
 import { links } from "./links";
 import { taglines } from "./taglines";
+import PictureAsPdfOutlinedIcon from "@mui/icons-material/PictureAsPdfOutlined";
 
 interface Props {
   setSelectedIndex: React.Dispatch<React.SetStateAction<number>>;
@@ -19,6 +21,7 @@ interface Props {
 
 export default function Home({ setSelectedIndex }: Props) {
   const { pathname } = useLocation();
+  const cvUrl = `${process.env.PUBLIC_URL || ''}/cv/Aaron-Tawil-CV.pdf`;
   const [taglineIndex, setTaglineIndex] = useState<number>(() =>
     Math.floor(Math.random() * Math.max(taglines.length, 1))
   );
@@ -50,7 +53,12 @@ export default function Home({ setSelectedIndex }: Props) {
       <Grid item xs={3}>
         <Stack direction={{ xs: "column", sm: "row-reverse" }} spacing={2}>
           <Box display="flex" sx={{ justifyContent: "center" }}>
-            <img src={logo} width="100px" alt="logo" />
+            <Box
+              component="img"
+              src={logo}
+              alt="logo"
+              sx={{ width: 140, height: "auto", flexShrink: 0 }}
+            />
           </Box>
           <Box>
             <Grid
@@ -86,6 +94,24 @@ export default function Home({ setSelectedIndex }: Props) {
                   </Tooltip>
                 ))}
               </Stack>
+            </Grid>
+            <Grid
+              display="flex"
+              justifyContent={{ xs: "center", sm: "flex-start" }}
+              sx={{ mt: 1.5 }}
+            >
+              <Tooltip title="Opens PDF in a new tab" arrow>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  href={cvUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  startIcon={<PictureAsPdfOutlinedIcon />}
+                >
+                  Download CV
+                </Button>
+              </Tooltip>
             </Grid>
           </Box>
         </Stack>

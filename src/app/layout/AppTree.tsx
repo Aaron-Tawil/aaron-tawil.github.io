@@ -1,12 +1,9 @@
 import * as React from "react";
-import TreeView from "@mui/lab/TreeView";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import TreeItem from "@mui/lab/TreeItem";
+import { TreeView } from "@mui/x-tree-view";
+import { TreeItem } from "@mui/x-tree-view/TreeItem";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useTheme } from "@mui/material/styles";
-import { VscMarkdown } from "react-icons/vsc";
 
 interface Page {
   index: number;
@@ -70,15 +67,12 @@ export default function AppTree({
   return (
     <TreeView
       aria-label="file system navigator"
-      defaultCollapseIcon={<ExpandMoreIcon />}
-      defaultExpandIcon={<ChevronRightIcon />}
       sx={{ minWidth: 220 }}
-      defaultExpanded={["-1"]}
+      defaultExpandedItems={["-1"]}
     >
       <TreeItem
-        nodeId="-1"
-        label="Home"
-        sx={{ color: theme.palette.mode === "dark" ? "#bdc3cf" : "#69665f" }}
+        itemId="-1"
+        label={<span style={{ color: theme.palette.mode === "dark" ? "#bdc3cf" : "#69665f" }}>Home</span>}
         onClick={() => {
           navigate("/");
           setSelectedIndex(-1);
@@ -87,16 +81,17 @@ export default function AppTree({
         {pages.map(({ index, name, route }) => (
           <TreeItem
             key={index}
-            nodeId={index.toString()}
-            label={name}
+            itemId={index.toString()}
+            label={
+              <span style={{ color: renderTreeItemColor(index) }}>{name}</span>
+            }
             sx={{
-              color: renderTreeItemColor(index),
               backgroundColor: renderTreeItemBgColor(index),
               "&& .Mui-selected": {
                 backgroundColor: renderTreeItemBgColor(index),
               },
             }}
-            icon={<VscMarkdown color="#6997d5" />}
+            
             onClick={() => {
               if (!visiblePageIndexs.includes(index)) {
                 const newIndexs = [...visiblePageIndexs, index];
