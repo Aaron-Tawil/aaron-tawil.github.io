@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/vscode-personal-site/static/js/main.bfeb8983.js",
+    "main.js": "/vscode-personal-site/static/js/main.c61a87a4.js",
     "static/js/453.27fae5e4.chunk.js": "/vscode-personal-site/static/js/453.27fae5e4.chunk.js",
-    "static/media/favicon.png": "/vscode-personal-site/static/media/favicon.898815204b533b2a2186.png",
+    "static/media/favicon3.png": "/vscode-personal-site/static/media/favicon3.a93b3d0d309061adba3b.png",
     "index.html": "/vscode-personal-site/index.html",
-    "main.bfeb8983.js.map": "/vscode-personal-site/static/js/main.bfeb8983.js.map",
+    "main.c61a87a4.js.map": "/vscode-personal-site/static/js/main.c61a87a4.js.map",
     "453.27fae5e4.chunk.js.map": "/vscode-personal-site/static/js/453.27fae5e4.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.bfeb8983.js"
+    "static/js/main.c61a87a4.js"
   ]
 }
