@@ -7,12 +7,13 @@
 - **Technologies**: Python 3.11, Playwright, Telegram Bot API, Docker, Google Cloud Run, Cloud Scheduler, Artifact Registry, Google Cloud Storage.
 - **Repo**: [Aaron-Tawil/Grade-Notifier](https://github.com/Aaron-Tawil/Grade-Notifier)
 
-## 🧠 SymNMF Clustering - C-accelerated ML
+## 🧠 SymNMF Clustering - C-Accelerated ML Algorithm
 
 - **Purpose**: High-performance implementation of Symmetric Non-negative Matrix Factorization (SymNMF) for clustering, with a clean Python CLI and C core for speed.
 - **Highlights**: End-to-end pipeline (similarity -> normalization -> factorization -> assignment), silhouette-score analysis vs. K-Means, and memory safety checks.
 - **Technologies**: C, Python, NumPy, SciPy, scikit-learn, setuptools, Make/GCC.
-- **Repo**: [Aaron-Tawil/SymNMF-Cluste](https://github.com/Aaron-Tawil/SymNMF-Cluste)
+- **Repo**: [Aaron-Tawil/SymNMF-Cluste](https://github.com/Aaron-Tawil/SymNMF-Cluster)
+
 
 ## 🗂️  Data Structures Projects (University)
 
