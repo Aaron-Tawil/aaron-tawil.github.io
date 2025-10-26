@@ -2,9 +2,13 @@
 
 ## 🔔 TAU Grade Notifier - Serverless grade alerts
 
-- **Purpose**: Monitors TAU's student portal and pushes Telegram alerts the moment a grade (or exam notebook availability) changes.
-- **Highlights**: Headless login + scrape with Playwright; JSON diffing with a persisted cache in Google Cloud Storage (prevents duplicate pings); Dockerized on Cloud Run and triggered by Cloud Scheduler (for example, every 10 minutes, Sun-Thu); tidy, human-readable Telegram messages (for example, 95 -> 100, "Notebook now available").
-- **Technologies**: Python 3.11, Playwright, Telegram Bot API, Docker, Google Cloud Run, Cloud Scheduler, Artifact Registry, Google Cloud Storage.
+- **Purpose**: Monitors TAU's student portal for grade changes and pushes real-time Telegram alerts the moment a grade or exam notebook availability is updated.
+- **Highlights**:
+  - **Dual Monitoring Strategy**: Employs two independent methods for maximum reliability. The primary method uses direct HTTP requests to the university's backend IMS system for fast, efficient data fetching that is resilient to UI changes. The secondary method uses headless browser scraping with Playwright to capture details like exam notebook availability.
+  - **Intelligent Change Detection**: Uses JSON diffing with a persisted cache in Google Cloud Storage to prevent duplicate notifications.
+  - **Serverless Architecture**: Dockerized and deployed on Google Cloud Run, triggered by Cloud Scheduler for cost-effective, automated execution (e.g., every 10 minutes, Sun-Thu).
+  - **Detailed Notifications**: Sends tidy, human-readable Telegram messages (e.g., "Grade changed: 95 -> 100", "Notebook now available").
+- **Technologies**: Python 3.11, Playwright, Requests, BeautifulSoup, Telegram Bot API, Docker, Google Cloud Run, Cloud Scheduler, Artifact Registry, Google Cloud Storage.
 - **Repo**: [Aaron-Tawil/Grade-Notifier](https://github.com/Aaron-Tawil/Grade-Notifier)
 
 ## 🧠 SymNMF Clustering - C-Accelerated ML Algorithm
