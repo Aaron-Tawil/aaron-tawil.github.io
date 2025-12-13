@@ -1,6 +1,5 @@
 export const taglines: string[] = [
   // Builder / Energy
-  "Building useful things, one commit at a time",
   "Turning problems into products",
   // Problem‑Solving
   "Finding signal in the noise",
