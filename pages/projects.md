@@ -11,6 +11,28 @@
 - **Technologies**: Python 3.11, Playwright, Requests, BeautifulSoup, Telegram Bot API, Docker, Google Cloud Run, Cloud Scheduler, Artifact Registry, Google Cloud Storage.
 - **Repo**: [Aaron-Tawil/Grade-Notifier](https://github.com/Aaron-Tawil/Grade-Notifier)
 
+
+## 🏷️ Smart Shelf Labels - Automated Retail Signage
+
+- **Purpose**: A serverless automation solution that monitors Gmail for Excel files containing product updates and generates professional, print-ready PDF signage. It uses Generative AI to clean and standardize messy ERP product names.
+- **Highlights**:
+  - **Automated Workflow**: End-to-end automation from email receipt to PDF generation, triggering push notifications via Google Cloud Pub/Sub.
+  - **Generative AI Cleaning**: Leverages Google Gemini to intelligently format and standardize product names (e.g., removing internal codes, fixing Hebrew RTL text).
+  - **Cost & Resource Optimization**: Smart filtering logic checks Firestore state to only generate signs for new products or price changes, reducing printing waste.
+  - **Serverless Architecture**: Built on Google Cloud Platform using Cloud Functions (Gen 2), Firestore for state management, and Pub/Sub.
+- **Technologies**: Python 3.10+, Google Cloud Platform (Functions, Firestore, Pub/Sub, Gmail API), Google Gemini API, ReportLab, Pandas.
+- **Repo**: [Aaron-Tawil/smart-shelf-labels](https://github.com/Aaron-Tawil/smart-shelf-labels)
+
+
+## 📱 Android App for Inventory Management with Barcode Scanner (2020)
+
+- Developed an Android app in Kotlin to retrieve item details (price, quantity, etc.) via barcode scanning or manual search.
+- Boosted employee productivity (~20% faster in receiving new goods).
+- Integrated with Firebase for cloud sync and Room for local data storage.
+- **Technologies**: Kotlin, Android, Firebase, Room.
+- GitHub repo: [https://github.com/Aaron-Tawil/Barcode-Scanner](https://github.com/Aaron-Tawil/Barcode-Scanner)
+
+
 ## 🧠 SymNMF Clustering - C-Accelerated ML Algorithm
 
 - **Purpose**: High-performance implementation of Symmetric Non-negative Matrix Factorization (SymNMF) for clustering, with a clean Python CLI and C core for speed.
@@ -26,10 +48,4 @@
 - **Technologies**: Python (AVL Tree), Java (Fibonacci Heap)
 - Repos: [AVLTree](https://github.com/Aaron-Tawil/AVLTree) | [Fibonacci Heap](https://github.com/haimtoledano1/FibonacciHeaps)
 
-## 📱 Android App for Inventory Management with Barcode Scanner (2020)
 
-- Developed an Android app in Kotlin to retrieve item details (price, quantity, etc.) via barcode scanning or manual search.
-- Boosted employee productivity (~20% faster in receiving new goods).
-- Integrated with Firebase for cloud sync and Room for local data storage.
-- **Technologies**: Kotlin, Android, Firebase, Room.
-- GitHub repo: [https://github.com/Aaron-Tawil/Barcode-Scanner](https://github.com/Aaron-Tawil/Barcode-Scanner)
