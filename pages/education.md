@@ -7,3 +7,6 @@
 - Introduction to Computer Science (Python) – 93
 - Data Structures – 96
 - Software 1 (Java) – 96
+- Software Project (ANSI C) - 96
+- Algorithms - 86
+- Computational Models - 94
