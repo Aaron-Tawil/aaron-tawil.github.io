@@ -10,12 +10,6 @@ Third-year B.Sc. student in Computer Science and Physics (Quantum Computing Prog
 - **B.Sc.** in CS and Physics
 - GPA: 91 (CS), 89 (Physics)
 
-### Relevant Courses
-- Introduction to Computer Science (Python) – 93
-- Data Structures – 96
-- Software 1 (Java) – 96
-
-
 ## Selected Projects
 
 **🔔 TAU Grade Notifier**
