@@ -12,6 +12,9 @@ Third-year B.Sc. student in Computer Science and Physics (Quantum Computing Prog
 
 ## Selected Projects
 
+**📦 Super Order Automation**
+AI-powered supplier order processing system that ingests email attachments, extracts structured order data with Gemini, and provides a Streamlit dashboard for review and export. Built with Python, Streamlit, and Google Cloud. [More details](#/projects)
+
 **🔔 TAU Grade Notifier**
 Serverless system that monitors university portals for grade updates and sends real-time Telegram alerts. Built with Python, Playwright, and Google Cloud Run. [More details](#/projects)
 

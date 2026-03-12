@@ -9,9 +9,9 @@
 ## Tools & Env
 - Git
 - SQL
-- Linux
+- Linux (Fedora 💕)
 - Docker
-- GenAi tools (Gemini CLI, codex, MCPs etc)
+- GenAi tools (Gemini CLI, codex, MCPs, skills etc)
 
 ## Google Cloud Platform (GCP)
 - Cloud Functions
