@@ -1,51 +1,64 @@
 # 🧪 Projects
 
-## 🔔 TAU Grade Notifier - Serverless grade alerts
+## 📦 Super Order Automation - AI-Powered Supplier Order Processing
 
-- **Purpose**: Monitors TAU's student portal for grade changes and pushes real-time Telegram alerts the moment a grade or exam notebook availability is updated.
+- **Purpose**: Automates supplier order intake by monitoring email inboxes, extracting structured order data from PDF and Excel attachments, and routing results into a review and export workflow.
 - **Highlights**:
-  - **Dual Monitoring Strategy**: Employs two independent methods for maximum reliability. The primary method uses direct HTTP requests to the university's backend IMS system for fast, efficient data fetching that is resilient to UI changes. The secondary method uses headless browser scraping with Playwright to capture details like exam notebook availability.
-  - **Intelligent Change Detection**: Uses JSON diffing with a persisted cache in Google Cloud Storage to prevent duplicate notifications.
-  - **Serverless Architecture**: Dockerized and deployed on Google Cloud Run, triggered by Cloud Scheduler for cost-effective, automated execution (e.g., every 10 minutes, Sun-Thu).
-  - **Detailed Notifications**: Sends tidy, human-readable Telegram messages (e.g., "Grade changed: 95 -> 100", "Notebook now available").
-- **Technologies**: Python 3.11, Playwright, Requests, BeautifulSoup, Telegram Bot API, Docker, Google Cloud Run, Cloud Scheduler, Artifact Registry, Google Cloud Storage.
-- **Repo**: [Aaron-Tawil/Grade-Notifier](https://github.com/Aaron-Tawil/Grade-Notifier)
-
+  - **Reduced Manual Processing**: Replaces repetitive order-entry work by automatically ingesting supplier emails, parsing attachments, and generating structured order records.
+  - **AI-Assisted Data Extraction**: Uses Google Gemini to classify suppliers, extract order details from messy files, and normalize results for downstream business workflows.
+  - **Human-in-the-Loop Review**: Includes a Streamlit dashboard for inbox triage, manual uploads, supplier and item management, and correction of extracted orders before export.
+  - **Production-Ready Cloud Architecture**: Built as a serverless pipeline on Google Cloud Functions, Cloud Run, Firestore, Pub/Sub, and Cloud Storage for scalable event-driven processing.
+- **Technologies**: Python 3.11, Google Vertex AI, Streamlit, Google Cloud Functions, Cloud Run, Firestore, Pub/Sub, Cloud Storage, Google OAuth / Microsoft OAuth, FastAPI, Pydantic, Pandas.
+- **Repo**: [Aaron-Tawil/super-order-automation](https://github.com/Aaron-Tawil/super-order-automation)
 
 ## 🏷️ Smart Shelf Labels - Automated Retail Signage
 
-- **Purpose**: A serverless automation solution that monitors Gmail for Excel files containing product updates and generates professional, print-ready PDF signage. It uses Generative AI to clean and standardize messy ERP product names.
+- **Purpose**: Automates retail signage generation by processing emailed Excel product updates and producing print-ready PDF shelf labels.
 - **Highlights**:
-  - **Automated Workflow**: End-to-end automation from email receipt to PDF generation, triggering push notifications via Google Cloud Pub/Sub.
-  - **Generative AI Cleaning**: Leverages Google Gemini to intelligently format and standardize product names (e.g., removing internal codes, fixing Hebrew RTL text).
-  - **Cost & Resource Optimization**: Smart filtering logic checks Firestore state to only generate signs for new products or price changes, reducing printing waste.
-  - **Serverless Architecture**: Built on Google Cloud Platform using Cloud Functions (Gen 2), Firestore for state management, and Pub/Sub.
+  - **End-to-End Workflow Automation**: Processes incoming product files automatically, generates signage outputs, and pushes status updates through Google Cloud Pub/Sub.
+  - **AI-Powered Product Name Cleaning**: Uses Google Gemini to standardize messy ERP product names, including handling formatting issues and Hebrew RTL text.
+  - **Waste Reduction Logic**: Checks Firestore state to generate signs only for new products or price changes, reducing unnecessary printing.
+  - **Serverless Deployment**: Runs on Google Cloud Functions (Gen 2) with Firestore and Pub/Sub for low-maintenance, event-driven execution.
 - **Technologies**: Python 3.10+, Google Cloud Platform (Functions, Firestore, Pub/Sub, Gmail API), Google Gemini API, ReportLab, Pandas.
 - **Repo**: [Aaron-Tawil/smart-shelf-labels](https://github.com/Aaron-Tawil/smart-shelf-labels)
 
+## 🔔 TAU Grade Notifier - Serverless Grade Alerts
 
-## 📱 Android App for Inventory Management with Barcode Scanner (2020)
+- **Purpose**: Monitors the Tel Aviv University student portal for grade changes and sends real-time Telegram alerts when grades or exam notebook availability are updated.
+- **Highlights**:
+  - **Reliable Monitoring Strategy**: Combines direct backend HTTP requests for fast, resilient checks with Playwright-based browser automation for portal details unavailable through the backend alone.
+  - **Duplicate Alert Prevention**: Uses persisted JSON diffing in Google Cloud Storage to detect only meaningful changes and avoid redundant notifications.
+  - **Low-Maintenance Automation**: Runs as a Dockerized service on Google Cloud Run and is triggered by Cloud Scheduler for fully automated execution.
+  - **Clear User Notifications**: Delivers concise Telegram alerts such as grade changes and notebook availability updates.
+- **Technologies**: Python 3.11, Playwright, Requests, BeautifulSoup, Telegram Bot API, Docker, Google Cloud Run, Cloud Scheduler, Artifact Registry, Google Cloud Storage.
+- **Repo**: [Aaron-Tawil/Grade-Notifier](https://github.com/Aaron-Tawil/Grade-Notifier)
 
-- Developed an Android app in Kotlin to retrieve item details (price, quantity, etc.) via barcode scanning or manual search.
-- Boosted employee productivity (~20% faster in receiving new goods).
-- Integrated with Firebase for cloud sync and Room for local data storage.
+## 📱 Inventory Management App
+
+- **Purpose**: Built an Android app to help warehouse or retail staff retrieve item details quickly through barcode scanning or manual search.
+- **Highlights**:
+  - **Faster Receiving Workflow**: Improved employee productivity by roughly 20% when receiving new goods.
+  - **Practical Mobile UX**: Supported both barcode scanning and manual lookup to fit real-world inventory workflows.
+  - **Hybrid Data Strategy**: Combined Firebase cloud sync with Room local storage for reliability and offline-friendly usage.
 - **Technologies**: Kotlin, Android, Firebase, Room.
-- GitHub repo: [https://github.com/Aaron-Tawil/Barcode-Scanner](https://github.com/Aaron-Tawil/Barcode-Scanner)
+- **Repo**: [Aaron-Tawil/Barcode-Scanner](https://github.com/Aaron-Tawil/Barcode-Scanner)
 
+## 🧠 SymNMF Clustering Engine
 
-## 🧠 SymNMF Clustering - C-Accelerated ML Algorithm
-
-- **Purpose**: High-performance implementation of Symmetric Non-negative Matrix Factorization (SymNMF) for clustering, with a clean Python CLI and C core for speed.
-- **Highlights**: End-to-end pipeline (similarity -> normalization -> factorization -> assignment), silhouette-score analysis vs. K-Means, and memory safety checks.
+- **Purpose**: Implemented a high-performance Symmetric Non-negative Matrix Factorization (SymNMF) clustering pipeline with a C core and Python interface.
+- **Highlights**:
+  - **Performance-Focused Implementation**: Moved the computational core to C to improve runtime for matrix-heavy clustering operations.
+  - **Usable Python Interface**: Wrapped the low-level implementation in a clean Python CLI for easier experimentation and evaluation.
+  - **Model Evaluation**: Compared clustering quality against K-Means using silhouette-score analysis.
 - **Technologies**: C, Python, NumPy, SciPy, scikit-learn, setuptools, Make/GCC.
-- **Repo**: [Aaron-Tawil/SymNMF-Cluste](https://github.com/Aaron-Tawil/SymNMF-Cluster)
+- **Repo**: [Aaron-Tawil/SymNMF-Cluster](https://github.com/Aaron-Tawil/SymNMF-Cluster)
 
+## 🗂️ Data Structures Implementations
 
-## 🗂️  Data Structures Projects (University)
-
-- **AVL Tree (Python)**: self-balancing BST with support for insertion, deletion, search, and advanced operations like split/join
-- **Fibonacci Heap (Java)**: developed a heap supporting efficient merges and key updates; applied to graph algorithms such as Dijkstra's.
-- **Technologies**: Python (AVL Tree), Java (Fibonacci Heap)
-- Repos: [AVLTree](https://github.com/Aaron-Tawil/AVLTree) | [Fibonacci Heap](https://github.com/haimtoledano1/FibonacciHeaps)
-
-
+- **Purpose**: Implemented core data structures as part of university coursework, with a focus on correctness, algorithmic efficiency, and advanced operations.
+- **Highlights**:
+  - **AVL Tree in Python**: Built a self-balancing binary search tree supporting insertion, deletion, search, and advanced split/join operations.
+  - **Fibonacci Heap in Java**: Developed a heap implementation optimized for merge and key-update operations, with applications to graph algorithms such as Dijkstra's.
+  - **Strong Algorithmic Foundations**: Reinforced understanding of asymptotic analysis, pointer-heavy logic, and performance-oriented implementation details.
+- **Technologies**: Python, Java.
+- **Repos**: [AVLTree](https://github.com/Aaron-Tawil/AVLTree) | [FibonacciHeaps](https://github.com/haimtoledano1/FibonacciHeaps)
